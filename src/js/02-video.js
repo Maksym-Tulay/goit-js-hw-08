@@ -2,10 +2,12 @@
 
 import throttle from 'lodash.throttle';
 
+import Player from '@vimeo/player';
+
 // adding refs
 
 const iframe = document.querySelector('iframe');
-const player = new Vimeo.Player(iframe);
+const player = new Player(iframe);
 
 // adding player eventlistener
 
@@ -19,4 +21,8 @@ function onPlay({ seconds }) {
 
 // adding method to start player from the previous time
 
-player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
+if (localStorage.length === 0) {
+    return;
+} else {
+    player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
+};
