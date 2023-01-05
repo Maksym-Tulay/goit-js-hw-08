@@ -1,4 +1,4 @@
-// adding a lodash throttle
+// adding a lodash throttle 
 
 import throttle from 'lodash.throttle';
 
