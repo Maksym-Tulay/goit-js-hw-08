@@ -21,7 +21,7 @@ function onPlay({ seconds }) {
 
 // adding method to start player from the previous time
 
-if (localStorage.length === 0) {
+if(!localStorage.getItem("videoplayer-current-time")) {
     return;
 } else {
     player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
